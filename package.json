@@ -1,0 +1,38 @@
+{
+  "name": "jpdevspace-blog",
+  "version": "1.0.0",
+  "description": "My personal website and blog, built using JavaScript everywhere, backend with NodeJS and frontend with React.",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "deploy": "npm build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "npm install && npm install --prefix client"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "javascript",
+    "blog"
+  ],
+  "author": "Jean Paul Giraldo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpdevspace/jpdevspaceBlog.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.16"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1"
+  }
+}
